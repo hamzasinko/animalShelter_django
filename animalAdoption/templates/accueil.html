@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="container d-flex flex-column align-items-center ">
+      <div class="hero-text">
+        <h1>Bienvenue sur Animal Shelter</h1>
+        <p>Vous pouvez adopter ici des animaux de votre choix</p>
+        <a href="/animal/chien" class="btn btn-primary border-white bg-custom btn-get-started">Nos Chiens</a>
+      </div>
+    </div>
+  </section>
+  <div class="outer-container d-flex justify-content-center align-items-center">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-sm-5 col-md-3 m-1">
+          <div class="card p-1 card-height">
+            <img src="/static/animalAdoption/dogs.jpg" class="card-img-top mx-auto" alt="Card Image 1">
+            <div class="card-body text-center">
+              <h5 class="card-title">Nos chiens</h5>
+              <p class="card-text">Les chiens disponibles à l'adoption sont adorables mélange de races avec une personnalité unique.</p>
+              <a href="/animal/chien" class="btn btn-primary border-white bg-custom btn-get-started">Découvrir</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5 col-md-3 m-1">
+          <div class="card p-1 card-height">
+            <img src="/static/animalAdoption/cats.jpg" class="card-img-top mx-auto" alt="Card Image 2">
+            <div class="card-body text-center">
+              <h5 class="card-title">Nos chats</h5>
+              <p class="card-text">les chats à adopter peuvent être décrit comme amicals, curieux et indépendants.</p>
+              <a href="/animal/chat" class="btn btn-primary border-white bg-custom btn-get-started">Découvrir</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5 col-md-3 m-1">
+          <div class="card p-1 card-height">
+            <img src="/static/animalAdoption/birds.jpg" class="card-img-top mx-auto" alt="Card Image 3">
+            <div class="card-body text-center">
+              <h5 class="card-title">Nos oiseaux</h5>
+              <p class="card-text">les oiseaux à adopter peuvent être décrits comme intelligents, sociables et curieux</p>
+              <a href="/animal/oiseau" class="btn btn-primary border-white bg-custom btn-get-started">Découvrir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

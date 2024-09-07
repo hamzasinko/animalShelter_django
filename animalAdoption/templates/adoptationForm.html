@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if type == "Adoption" %}
+        <div style="height: 20vh;"></div>
+        <div class="outer-container d-flex justify-content-center align-items-center w-100">
+            <div class="container d-flex flex-column justify-content-center align-items-center hero-text">
+                <h1>Formulaire d'adoption de {{ nom }}</h1>
+                <form action="/animal/{{ type1 }}/{{ nom }}" method="post" class="myform">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="form-group">
+                        {{ field.label_tag }}
+                        {{ field }}
+                    </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary border-white bg-custom btn-get-started">Submit</button>
+                </form>
+            </div>
+        </div>   
+        <div style="height: 20vh;"></div>
+    {% elif type == "Valide"  %}
+        <div style="height: 20vh;"></div>
+        <div class="container d-flex justify-content-center align-items-center text-center w-100">
+            <h1 style="color:green">un email de confirmation a été envoyé à votre boîte de messagerie </h1>
+        </div>
+        <div style="height: 60vh;"></div>
+    {% endif %}
+{% endblock %}

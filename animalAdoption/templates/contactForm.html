@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if type == "contact" %}
+<div style="height: 20vh;"></div>
+<div class="container d-flex justify-content-center align-items-center text-center w-100">
+    <h1 class="color-dark">Vos questions et suggestions sont toujours les bienvenues. </h1>
+</div>
+<div class="outer-container d-flex justify-content-center align-items-center w-100">
+    <div class="container d-flex flex-column justify-content-center align-items-center hero-text">
+    <h1>Formulaire de Contact</h1>
+    <form action="/contact/" method="post" class="myform">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form-group">
+            {{ field.label_tag }}
+            {{ field }}
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary border-white bg-custom btn-get-started">Submit</button>
+    </form>
+    </div>
+</div>
+<div style="height: 20vh;"></div>
+{% elif type == "thanks"  %}
+<div style="height: 20vh;"></div>
+<div class="container d-flex justify-content-center align-items-center text-center w-100">
+    <h1 style="color:green">Merci pour votre avis</h1>
+</div>
+<div style="height: 60vh;"></div>
+{% endif %}
+
+{% endblock %}

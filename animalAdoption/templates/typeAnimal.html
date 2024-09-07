@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="height: 20vh;"></div>
+<div class="outer-container d-flex justify-content-center align-items-center">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        {% for animal in animals %}
+        <div class="col-sm-5 col-md-3 m-1">
+            <div class="card p-1 card-height">
+            {% if slug == 'chien' %}
+              <img src="/static/animalAdoption/dogs.jpg" class="card-img-top mx-auto" alt="Card Image 1">
+            {% elif slug == 'chat' %}
+              <img src="/static/animalAdoption/cats.jpg" class="card-img-top mx-auto" alt="Card Image 1">
+            {% elif slug == 'oiseau' %}
+              <img src="/static/animalAdoption/birds.jpg" class="card-img-top mx-auto" alt="Card Image 1">
+            {% endif %}
+              <div class="card-body text-center">
+                <h5 class="card-title">{{animal.nom}}</h5>
+                <p class="card-text">Age: {{animal.age}}</p>
+                <p class="card-text">Statut vaccinal:
+                    {% if animal.statut_vaccinal == True %}
+                        Oui
+                    {% else %}
+                        Non
+                    {% endif %}
+                </p>
+                <p class="card-text">sterilisation: 
+                    {% if animal.sterilisation == True %}
+                        Oui
+                    {% else %}
+                        Non
+                    {% endif %}
+                </p>
+                <a href="/animal/{{slug}}/{{animal.nom}}" class="btn btn-primary border-white bg-custom btn-get-started">Adopte moi</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+</div>
+{% endblock %}
